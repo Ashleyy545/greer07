@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,10 +24,13 @@ public class PlayerController : MonoBehaviour
     public TextMesh countText;
 
     public AudioClip sound;
+    public int velocidade = 30;
+    private SpriteRenderer mySpriteRenderer;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -34,6 +38,23 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * speed);
+
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (mySpriteRenderer != null)
+            {
+                mySpriteRenderer.flipX = true;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (mySpriteRenderer != null)
+            {
+                mySpriteRenderer.flipX = false;
+            }
+        }
+
     }
 
 
@@ -61,3 +82,7 @@ public class PlayerController : MonoBehaviour
 
     }
 }
+
+
+
+
