@@ -1,0 +1,7 @@
+Ashley,500
+Amber,700
+Megan,900
+Lauren,100
+Lauren,260
+Ashley,640
+Jeff,100
