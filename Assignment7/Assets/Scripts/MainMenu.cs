@@ -17,8 +17,8 @@ public class MainMenu : MonoBehaviour
         Unsliced.gameScore = 0;
         Unsliced.amount = 0;
         SceneManager.LoadScene(0);
-        time.timePerQuestion = 30f;
-       
+        time.timePerQuestion = toggleButtons.timer;
+
     }
 
     public void begin()
